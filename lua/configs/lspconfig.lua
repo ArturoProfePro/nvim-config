@@ -7,7 +7,7 @@ local servers = {
     settings = {
       python = {
         analysis = {
-          autoSearchPaths = true,
+          autoSearchPaths = false,
           typeCheckingMode = "basic",
           useLibraryCodeForTypes = true,
           -- Проблемы всех файлов в проекте можно увидеть с помощью :Telescope diagnostics

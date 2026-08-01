@@ -4,6 +4,8 @@ local options = {
     python = { "ruff_format" },
     css = { "prettier" },
     html = { "prettier" },
+    yaml = { "prettier" },
+    dockerfile = { "hadolint" },
   },
 
   format_on_save = {
