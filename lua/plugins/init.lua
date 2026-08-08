@@ -86,5 +86,18 @@ return {
       return vim.tbl_deep_extend("force", opts, user_opts)
     end,
   },
+  {
+    "supermaven-inc/supermaven-nvim",
+    -- Отключаем ленивую загрузку, чтобы Supermaven стартовал сразу при открытии Neovim
+    event = "InsertEnter", -- или lazy = false
+    config = function()
+      require("supermaven-nvim").setup {
+        keymaps = {
+          accept_suggestion = "<Right>",
+          clear_suggestion = "<C-]>",
+        },
+      }
+    end,
+  },
   { "stevanmilic/nvim-lspimport" },
 }
