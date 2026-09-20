@@ -1,10 +1,12 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "ruff_format" },
+    python = { "ruff_organize_imports", "ruff_format" },
     css = { "prettier" },
     html = { "prettier" },
     yaml = { "prettier" },
+    sh = { "shfmt" },
+    bash = { "shfmt" },
     dockerfile = { "hadolint" },
   },
 

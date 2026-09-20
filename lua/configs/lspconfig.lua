@@ -3,6 +3,12 @@ require("nvchad.configs.lspconfig").defaults()
 local servers = {
   html = {},
   cssls = {},
+  clangd = {},
+  rust_analyzer = {},
+  bashls = {},
+  jsonls = {},
+  yamlls = {},
+  marksman = {},
   pyright = {
     settings = {
       python = {
@@ -10,8 +16,6 @@ local servers = {
           autoSearchPaths = false,
           typeCheckingMode = "basic",
           useLibraryCodeForTypes = true,
-          -- Проблемы всех файлов в проекте можно увидеть с помощью :Telescope diagnostics
-          -- А если включить Ruff и отключить диагностику у pyright совсем (off), то в :Telescope diagnostics можно увидеть диагностику ruff
           diagnosticMode = "workspace",
         },
       },
@@ -23,8 +27,8 @@ local servers = {
 }
 
 for name, opts in pairs(servers) do
-  vim.lsp.enable(name) -- nvim v0.11.0 or above required
-  vim.lsp.config(name, opts) -- nvim v0.11.0 or above required
+  vim.lsp.config(name, opts)
+  vim.lsp.enable(name)
 end
 
--- read :h vim.lsp.config for changing options of lsp servers
+
